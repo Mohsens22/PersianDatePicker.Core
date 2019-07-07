@@ -8,16 +8,17 @@
     <StartupObject />
     <AssemblyName>Mohsen.PersianDateControls</AssemblyName>
     <RootNamespace>Mohsen.PersianDateControls</RootNamespace>
+    <Description>A Persian datepicker control for .NETCore WPF</Description>
+    <PackageProjectUrl>https://github.com/Mohsens22/PersianDatePicker.Core</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Mohsens22/PersianDatePicker.Core</RepositoryUrl>
+    <RepositoryType>Public</RepositoryType>
+    <PackageTags>.netcore3,wpf,persiancalendar,persiandatepicker</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="OpenCalendarButtonImage.bmp" />
     <None Remove="PersianCalendar.xaml" />
     <None Remove="PersianDatePicker.xaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\PersianDate\PersianDate.csproj" />
   </ItemGroup>
 
   <ItemGroup>
