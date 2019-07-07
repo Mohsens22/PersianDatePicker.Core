@@ -1,0 +1,52 @@
+﻿<Window x:Class="PersianDateDemo.TestWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:persianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls"
+        xmlns:arash="clr-namespace:Arash;assembly=PersianDate"
+        Title="TestWindow" Width="424" Height="240" >
+    <TabControl >
+        <TabItem Header="tab1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Text="DisplayDateStart:"/>
+                    <persianDateControls:PersianDatePicker Name="displayDateStartDatePicker" SelectedDate="1/1/1"/>
+                    <TextBlock Text="DisplayDateEnd:"/>
+                    <persianDateControls:PersianDatePicker Name="displayDateEndDatePicker" SelectedDate="2000/1/1"/>
+                    <TextBlock Text="DisplayDate:"/>
+                    <persianDateControls:PersianDatePicker Name="displayDateDatePicker" SelectedDate="{Binding DisplayDate, ElementName=persianCalendar, Mode=TwoWay}"/>
+                    <TextBlock Text="SelectedDate:"/>
+                    <TextBlock Text="{Binding SelectedDate.DayOfWeek, ElementName=persianCalendar, NotifyOnValidationError=True}"/>
+                    <TextBlock Text="{Binding SelectedDate, ElementName=persianCalendar, NotifyOnValidationError=True}"/>
+                </StackPanel>
+                <persianDateControls:PersianCalendar Name="persianCalendar"
+                                             Grid.Column="1"
+                                             Width="200"
+                                                     Height="170"
+                                             DisplayDateStart="{Binding SelectedDate, ElementName=displayDateStartDatePicker}"
+                                             DisplayDateEnd="{Binding SelectedDate, ElementName=displayDateEndDatePicker}"
+                                             />
+            </Grid>
+        </TabItem>
+        <TabItem Header="tab2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="30px"/>
+                </Grid.RowDefinitions>
+                <persianDateControls:PersianCalendar Name="persianCalendar1" />
+                <persianDateControls:PersianCalendar Name="persianCalendar2" SelectedDate="{Binding SelectedDate, ElementName=persianDatePicker2}" Grid.Column="1" SelectedDateBackground="#FFCBE5EE" />
+                <persianDateControls:PersianDatePicker Name="persianDatePicker1" Grid.Row="1" SelectedDate="{Binding ElementName=persianCalendar1, Path=SelectedDate}"/>
+                <persianDateControls:PersianDatePicker Name="persianDatePicker2" Grid.Row="1" Grid.Column="1" />
+            </Grid>
+
+        </TabItem>
+    </TabControl>
+</Window>
