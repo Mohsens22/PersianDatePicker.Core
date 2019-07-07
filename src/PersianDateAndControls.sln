@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDate", "PersianDate\PersianDate.csproj", "{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianDate", "PersianDate\PersianDate.csproj", "{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDate.Controls", "PersianDateControls\PersianDate.Controls.csproj", "{DE9FC8AC-6175-448B-9E04-E18B0FD06126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersianDateControls", "PersianDateControls\PersianDateControls.csproj", "{DE9FC8AC-6175-448B-9E04-E18B0FD06126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
