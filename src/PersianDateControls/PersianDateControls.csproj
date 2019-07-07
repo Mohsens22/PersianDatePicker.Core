@@ -13,6 +13,10 @@
     <RepositoryUrl>https://github.com/Mohsens22/PersianDatePicker.Core</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
     <PackageTags>.netcore3,wpf,persiancalendar,persiandatepicker</PackageTags>
+    <Authors>Mohsens22,Arash</Authors>
+    <Company>Mohsens22</Company>
+    <Copyright>Copyleft 2019 Mohsen</Copyright>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
