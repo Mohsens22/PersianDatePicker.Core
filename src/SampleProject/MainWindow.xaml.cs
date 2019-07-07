@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mohsen;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace SampleProject
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.datePicker.DisplayDateStart = this.calendar.DisplayDateStart =
+                (new PersianDate(1, 1, 1)).ToDateTime();
+            this.persianDatePicker.DisplayDateEnd = this.persianCalendar.DisplayDateEnd = new PersianDate(DateTime.MaxValue);
+            this.datePicker.DisplayDateEnd = this.calendar.DisplayDateEnd = DateTime.MaxValue;
+
+            
         }
     }
 }

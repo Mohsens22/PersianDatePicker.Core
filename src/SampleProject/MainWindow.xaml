@@ -4,9 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SampleProject"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        xmlns:persianDateControls="clr-namespace:Mohsen.PersianDateControls;assembly=Mohsen.PersianDateControls"
+        mc:Ignorable="d" 
+        xmlns:system="clr-namespace:System"
+        Loaded="Window_Loaded" Height="272" Width="440"  MinHeight="260" MinWidth="400"
+        Title="MainWindow" >
+    <Window.Resources>
+        <local:DateTimeToPersianDateConverter x:Key="dateToPersianDateConverter"/>
+    </Window.Resources>
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Calendar Name="calendar" TabIndex="2" Grid.Column="0" DisplayDate="{Binding SelectedDate, RelativeSource={RelativeSource Self}, Mode=OneWay}" SelectedDate="{x:Static Member=system:DateTime.Today}" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="12" />
+        <persianDateControls:PersianCalendar  Name="persianCalendar" DisplayDate="{Binding SelectedDate, RelativeSource={RelativeSource Self}}" SelectedDate="{Binding SelectedDate, ElementName=calendar, Converter={StaticResource dateToPersianDateConverter}, Mode=TwoWay}" Background="{x:Static SystemColors.ControlLightLightBrush}" TabIndex="1" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Center"  Width="180" Height="165"  Grid.Column="1" FontFamily="B Homa"  FontSize="11.4"  />
+        <DatePicker  Name="datePicker" Background="{x:Static SystemColors.ControlLightLightBrush}" Grid.Row="1" TabIndex="4" Margin="5" HorizontalAlignment="Center" Height="25" Width="115"/>
+        <persianDateControls:PersianDatePicker Name="persianDatePicker" SelectedDate="{Binding SelectedDate, ElementName=datePicker, Converter={StaticResource dateToPersianDateConverter}, Mode=TwoWay}"  Background="{x:Static SystemColors.ControlLightLightBrush}" TabIndex="3" Grid.Row="1"  Grid.Column="1" HorizontalAlignment="Center" Margin="5"  Height="25" Width="115" FontSize="11.5" FontFamily="B Homa" />
     </Grid>
 </Window>
