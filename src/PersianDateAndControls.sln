@@ -1,88 +1,28 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2080315-C126-4889-B014-AA1113E6DD2D}"
-	ProjectSection(SolutionItems) = preProject
-		Local.testsettings = Local.testsettings
-		PersianDateAndControls.vsmdi = PersianDateAndControls.vsmdi
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDate", "PersianDate\PersianDate.csproj", "{084915EA-C554-48BC-AB16-F38BE56F1A77}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDateControls", "PersianDateControls\PersianDateControls.csproj", "{A6A7F195-E07C-44B4-9209-2340B3254FF4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDateDemo", "PersianDateDemo\PersianDateDemo.csproj", "{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDateControlsUITest", "PersianDateControlsUITest\PersianDateControlsUITest.csproj", "{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDateTests", "PersianDateTestProject\PersianDateTests.csproj", "{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDate", "PersianDate\PersianDate.csproj", "{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}"
 EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = PersianDateAndControls.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Debug|Mixed Platforms = Debug|Mixed Platforms
-		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
-		Release|Mixed Platforms = Release|Mixed Platforms
-		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Release|Any CPU.Build.0 = Release|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{084915EA-C554-48BC-AB16-F38BE56F1A77}.Release|x86.ActiveCfg = Release|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{A6A7F195-E07C-44B4-9209-2340B3254FF4}.Release|x86.ActiveCfg = Release|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{F6EEA322-EF9D-4A8F-9DE8-AF1A01F3FC1C}.Release|x86.ActiveCfg = Release|Any CPU
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Debug|x86.ActiveCfg = Debug|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Debug|x86.Build.0 = Debug|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Release|Any CPU.ActiveCfg = Release|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Release|Mixed Platforms.Build.0 = Release|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Release|x86.ActiveCfg = Release|x86
-		{8A148BC9-E7C1-448A-A9E9-00B1C2CE2264}.Release|x86.Build.0 = Release|x86
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{2B0B308C-B1C3-4449-9159-6AB2D820D6EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C71244D-A5A9-4955-90C6-389EA8C09FE8}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = PersianDateAndControls.vsmdi
 	EndGlobalSection
 EndGlobal

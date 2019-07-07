@@ -5,7 +5,7 @@ using System.Text;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace PersianDate
+namespace Arash
 {
     public class PersianDateConverter : TypeConverter
     {

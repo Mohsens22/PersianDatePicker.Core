@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PersianDate
+namespace Arash
 {
     public enum PersianDayOfWeek
     {
-        شنبه = 6,
-        یکشنبه = 0,
+        شنبه=6,
+        یکشنبه=0,
         دوشنبه,
         ﺳﻪشنبه,
         چهارشنبه,
@@ -17,7 +17,7 @@ namespace PersianDate
     }
     public enum PersianMonth
     {
-        فروردین = 1,
+        فروردین=1,
         اردیبهشت,
         خرداد,
         تیر,
