@@ -1,9 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace PersianDate.Controls
 {
@@ -11,6 +18,22 @@ namespace PersianDate.Controls
     [DefaultProperty("SelectedDate")]
     public partial class PersianDatePicker : UserControl
     {
+        public PersianDatePicker()
+        {
+            InitializeComponent();
+            setBindings();
+            this.Text = this.SelectedDate.ToString();
+
+            //this is for closing the popup when a date is selected using PersianCalendar
+            foreach (var monthModeButton in this.persianCalendar.monthModeButtons)
+            {
+                monthModeButton.Click += delegate {
+                    this.persianCalnedarPopup.IsOpen = false;
+                };
+            }
+
+        }
+
         [Category("Date Picker")]
         public PersianDate SelectedDate
         {
@@ -100,9 +123,9 @@ namespace PersianDate.Controls
         {
             PersianDatePicker pdp = o as PersianDatePicker;
             pdp.Text = e.NewValue.ToString();
-            pdp.RaiseEvent(new RoutedEventArgs(SelectedDateChangedEvent,pdp));
+            pdp.RaiseEvent(new RoutedEventArgs(SelectedDateChangedEvent, pdp));
         }
-        
+
         static PersianDatePicker()
         {
             PropertyMetadata selectedDateMetadata = new PropertyMetadata(PersianDate.Today, selectedDateChanged);
@@ -115,8 +138,8 @@ namespace PersianDate.Controls
             DisplayDateProperty =
                 DependencyProperty.Register("DisplayDate", typeof(PersianDate), typeof(PersianDatePicker), displayDateMetadata);
 
-            PropertyMetadata textMetadata=new PropertyMetadata(PersianDate.Today.ToString());
-            TextProperty= DependencyProperty.Register("Text", typeof(string), typeof(PersianDatePicker), textMetadata);
+            PropertyMetadata textMetadata = new PropertyMetadata(PersianDate.Today.ToString());
+            TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(PersianDatePicker), textMetadata);
 
             PropertyMetadata displayDateStartMetaData = new PropertyMetadata(new PersianDate());
             DisplayDateStartProperty =
@@ -138,21 +161,7 @@ namespace PersianDate.Controls
         {
             get { return persianCalendar; }
         }
-        public PersianDatePicker()
-        {
-            InitializeComponent();
-            setBindings();
-            this.Text = this.SelectedDate.ToString();            
-            
-            //this is for closing the popup when a date is selected using PersianCalendar
-            foreach (var monthModeButton in this.persianCalendar.monthModeButtons)
-            {
-                monthModeButton.Click += delegate{
-                    this.persianCalnedarPopup.IsOpen = false;
-                };
-            }
-
-        }
+        
 
         private void setBindings()
         {
@@ -220,7 +229,7 @@ namespace PersianDate.Controls
 
         private void dateTextBox_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.Key==Key.Return)
+            if (e.Key == Key.Return)
                 validateText();
         }
 

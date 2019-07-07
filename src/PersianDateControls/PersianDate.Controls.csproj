@@ -10,6 +10,8 @@
 
   <ItemGroup>
     <None Remove="OpenCalendarButtonImage.bmp" />
+    <None Remove="PersianCalendar.xaml" />
+    <None Remove="PersianDatePicker.xaml" />
   </ItemGroup>
 
   <ItemGroup>
