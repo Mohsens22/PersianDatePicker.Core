@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDate", "PersianDate\PersianDate.csproj", "{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersianDate.Controls", "PersianDateControls\PersianDate.Controls.csproj", "{DE9FC8AC-6175-448B-9E04-E18B0FD06126}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47BFEAE4-1E23-4FC5-AFFF-27E98142E77C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9FC8AC-6175-448B-9E04-E18B0FD06126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9FC8AC-6175-448B-9E04-E18B0FD06126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9FC8AC-6175-448B-9E04-E18B0FD06126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9FC8AC-6175-448B-9E04-E18B0FD06126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
