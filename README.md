@@ -27,6 +27,8 @@ then paste
 
 Whereever you wanted to use persian calender.
 
+A sample project is present [Here](https://github.com/Mohsens22/PersianDatePicker.Core/tree/master/src/SampleProject)
+
 ![image](https://user-images.githubusercontent.com/22152065/60768601-01cced00-a0db-11e9-9a40-9affe9a160d5.png)
 
 ### About Perisan calendar
