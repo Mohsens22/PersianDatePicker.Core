@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PersianDateControls
+namespace Mohsen.PersianDateControls
 {
     [DefaultEvent("SelectedDateChanged")]
     [DefaultProperty("SelectedDate")]
@@ -27,7 +27,8 @@ namespace PersianDateControls
             //this is for closing the popup when a date is selected using PersianCalendar
             foreach (var monthModeButton in this.persianCalendar.monthModeButtons)
             {
-                monthModeButton.Click += delegate {
+                monthModeButton.Click += delegate
+                {
                     this.persianCalnedarPopup.IsOpen = false;
                 };
             }
@@ -161,7 +162,7 @@ namespace PersianDateControls
         {
             get { return persianCalendar; }
         }
-        
+
 
         private void setBindings()
         {

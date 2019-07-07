@@ -12,7 +12,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Mohsen;
 
-namespace PersianDateControls
+namespace Mohsen.PersianDateControls
 {
     [System.ComponentModel.DefaultEvent("SelectedDateChanged")]
     [System.ComponentModel.DefaultProperty("DisplayDate")]

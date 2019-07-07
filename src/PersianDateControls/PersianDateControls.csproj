@@ -6,6 +6,8 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon />
     <StartupObject />
+    <AssemblyName>Mohsen.PersianDateControls</AssemblyName>
+    <RootNamespace>Mohsen.PersianDateControls</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
