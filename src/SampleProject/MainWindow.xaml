@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SampleProject"
         xmlns:persianDateControls="clr-namespace:Mohsen.PersianDateControls;assembly=Mohsen.PersianDateControls"
         mc:Ignorable="d" 
-        xmlns:system="clr-namespace:System"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
         Loaded="Window_Loaded" Height="272" Width="440"  MinHeight="260" MinWidth="400"
         Title="MainWindow" >
     <Window.Resources>
