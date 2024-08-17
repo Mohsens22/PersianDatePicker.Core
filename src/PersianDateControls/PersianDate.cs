@@ -451,6 +451,16 @@ public struct PersianDate : IComparable<PersianDate>
         return this.n.CompareTo(that.n);
     }
 
+    public override bool Equals(object obj)
+    {
+        return base.Equals(obj);
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
+    }
+
     #endregion
 
 

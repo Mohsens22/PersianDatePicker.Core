@@ -12,11 +12,19 @@
     <PackageProjectUrl>https://github.com/Mohsens22/PersianDatePicker.Core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Mohsens22/PersianDatePicker.Core</RepositoryUrl>
     <RepositoryType>Public</RepositoryType>
-    <PackageTags>.netcore3,wpf,persiancalendar,persiandatepicker</PackageTags>
+    <PackageTags>.net8,wpf,persiancalendar,persiandatepicker</PackageTags>
     <Authors>Mohsens22,Arash</Authors>
     <Company>Mohsens22</Company>
-    <Copyright>Copyleft 2019 Mohsen</Copyright>
-    <Version>1.0.1</Version>
+    <Copyright>Copyleft 2024 Mohsen</Copyright>
+    <Version>2.0.1</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CodeAnalysisRuleSet />
   </PropertyGroup>
 
   <ItemGroup>
