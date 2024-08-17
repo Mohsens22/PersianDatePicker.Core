@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SampleProject;
+namespace Mohsen.PersianDateControls.SampleProject;
 
 public partial class App : Application
 {

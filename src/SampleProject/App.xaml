@@ -1,7 +1,7 @@
 ﻿<Application x:Class="SampleProject.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:SampleProject"
+             xmlns:local="clr-namespace:Mohsen.PersianDateControls.SampleProject"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          

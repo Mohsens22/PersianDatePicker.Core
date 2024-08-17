@@ -29,9 +29,9 @@ public partial class PersianDatePicker : UserControl
     }
 
     [Category("Date Picker")]
-    public Mohsen.PersianDate SelectedDate
+    public PersianDate SelectedDate
     {
-        get { return (Mohsen.PersianDate)GetValue(SelectedDateProperty); }
+        get { return (PersianDate)GetValue(SelectedDateProperty); }
         set { SetValue(SelectedDateProperty, value); }
     }
     public static readonly DependencyProperty SelectedDateProperty;
@@ -40,9 +40,9 @@ public partial class PersianDatePicker : UserControl
     /// Gets or sets the date that is being displayed in the calendar.
     /// </summary>
     [Category("Date Picker")]
-    public Mohsen.PersianDate DisplayDate
+    public PersianDate DisplayDate
     {
-        get { return (Mohsen.PersianDate)GetValue(DisplayDateProperty); }
+        get { return (PersianDate)GetValue(DisplayDateProperty); }
         set { SetValue(DisplayDateProperty, value); }
     }
     public static readonly DependencyProperty DisplayDateProperty;
@@ -51,9 +51,9 @@ public partial class PersianDatePicker : UserControl
     /// the minimum date that is displayed, and can be selected
     /// </summary>
     [Category("Date Picker")]
-    public Mohsen.PersianDate DisplayDateStart
+    public PersianDate DisplayDateStart
     {
-        get { return (Mohsen.PersianDate)GetValue(DisplayDateStartProperty); }
+        get { return (PersianDate)GetValue(DisplayDateStartProperty); }
         set { SetValue(DisplayDateStartProperty, value); }
     }
     public static readonly DependencyProperty DisplayDateStartProperty;
@@ -63,9 +63,9 @@ public partial class PersianDatePicker : UserControl
     /// the maximum date that is displayed, and can be selected
     /// </summary>
     [Category("Date Picker")]
-    public Mohsen.PersianDate DisplayDateEnd
+    public PersianDate DisplayDateEnd
     {
-        get { return (Mohsen.PersianDate)GetValue(DisplayDateEndProperty); }
+        get { return (PersianDate)GetValue(DisplayDateEndProperty); }
         set { SetValue(DisplayDateEndProperty, value); }
     }
     public static readonly DependencyProperty DisplayDateEndProperty;
@@ -91,7 +91,7 @@ public partial class PersianDatePicker : UserControl
     static object coerceDisplayDateEnd(DependencyObject d, object o)
     {
         var pdp = d as PersianDatePicker;
-        Mohsen.PersianDate value = (Mohsen.PersianDate)o;
+        PersianDate value = (PersianDate)o;
         if (value < pdp.DisplayDateStart)
         {
             return pdp.DisplayDateStart;
@@ -101,7 +101,7 @@ public partial class PersianDatePicker : UserControl
     static object coerceDateToBeInRange(DependencyObject d, object o)
     {
         PersianDatePicker pdp = d as PersianDatePicker;
-        Mohsen.PersianDate value = (Mohsen.PersianDate)o;
+        PersianDate value = (PersianDate)o;
         if (value < pdp.DisplayDateStart)
         {
             return pdp.DisplayDateStart;
@@ -122,27 +122,27 @@ public partial class PersianDatePicker : UserControl
 
     static PersianDatePicker()
     {
-        PropertyMetadata selectedDateMetadata = new PropertyMetadata(Mohsen.PersianDate.Today, selectedDateChanged);
+        PropertyMetadata selectedDateMetadata = new PropertyMetadata(PersianDate.Today, selectedDateChanged);
         selectedDateMetadata.CoerceValueCallback = coerceDateToBeInRange;
         SelectedDateProperty =
-            DependencyProperty.Register("SelectedDate", typeof(Mohsen.PersianDate), typeof(PersianDatePicker), selectedDateMetadata);
+            DependencyProperty.Register("SelectedDate", typeof(PersianDate), typeof(PersianDatePicker), selectedDateMetadata);
 
-        PropertyMetadata displayDateMetadata = new PropertyMetadata(Mohsen.PersianDate.Today);
+        PropertyMetadata displayDateMetadata = new PropertyMetadata(PersianDate.Today);
         displayDateMetadata.CoerceValueCallback = coerceDateToBeInRange;
         DisplayDateProperty =
-            DependencyProperty.Register("DisplayDate", typeof(Mohsen.PersianDate), typeof(PersianDatePicker), displayDateMetadata);
+            DependencyProperty.Register("DisplayDate", typeof(PersianDate), typeof(PersianDatePicker), displayDateMetadata);
 
-        PropertyMetadata textMetadata = new PropertyMetadata(Mohsen.PersianDate.Today.ToString());
+        PropertyMetadata textMetadata = new PropertyMetadata(PersianDate.Today.ToString());
         TextProperty = DependencyProperty.Register("Text", typeof(string), typeof(PersianDatePicker), textMetadata);
 
-        PropertyMetadata displayDateStartMetaData = new PropertyMetadata(new Mohsen.PersianDate());
+        PropertyMetadata displayDateStartMetaData = new PropertyMetadata(new PersianDate());
         DisplayDateStartProperty =
-            DependencyProperty.Register("DisplayDateStart", typeof(Mohsen.PersianDate), typeof(PersianDatePicker), displayDateStartMetaData);
+            DependencyProperty.Register("DisplayDateStart", typeof(PersianDate), typeof(PersianDatePicker), displayDateStartMetaData);
 
-        PropertyMetadata displayDateEndMetaData = new PropertyMetadata(new Mohsen.PersianDate(10000, 1, 1));
+        PropertyMetadata displayDateEndMetaData = new PropertyMetadata(new PersianDate(10000, 1, 1));
         displayDateEndMetaData.CoerceValueCallback = coerceDisplayDateEnd;
         DisplayDateEndProperty =
-            DependencyProperty.Register("DisplayDateEnd", typeof(Mohsen.PersianDate), typeof(PersianDatePicker), displayDateEndMetaData);
+            DependencyProperty.Register("DisplayDateEnd", typeof(PersianDate), typeof(PersianDatePicker), displayDateEndMetaData);
 
         SelectedDateChangedEvent =
             EventManager.RegisterRoutedEvent("SelectedDateChanged", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(PersianDatePicker));
@@ -165,7 +165,7 @@ public partial class PersianDatePicker : UserControl
             Path = new PropertyPath("SelectedDate"),
             Mode = BindingMode.TwoWay,
         };
-        this.persianCalendar.SetBinding(PersianCalendar.SelectedDateProperty, selectedDateBinding);
+        this.persianCalendar.SetBinding(SelectedDateProperty, selectedDateBinding);
 
         Binding displayDateBinding = new Binding
         {
@@ -173,7 +173,7 @@ public partial class PersianDatePicker : UserControl
             Path = new PropertyPath("DisplayDate"),
             Mode = BindingMode.TwoWay,
         };
-        this.persianCalendar.SetBinding(PersianCalendar.DisplayDateProperty, displayDateBinding);
+        this.persianCalendar.SetBinding(DisplayDateProperty, displayDateBinding);
 
         Binding textBinding = new Binding
         {
@@ -207,8 +207,8 @@ public partial class PersianDatePicker : UserControl
 
     void validateText()
     {
-        Mohsen.PersianDate date;
-        if (Mohsen.PersianDate.TryParse(dateTextBox.Text, out date))
+        PersianDate date;
+        if (PersianDate.TryParse(dateTextBox.Text, out date))
         {
             this.SelectedDate = date;
             this.DisplayDate = date;

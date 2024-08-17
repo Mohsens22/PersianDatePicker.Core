@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Mohsen;
+namespace Mohsen.PersianDateControls;
 
 //this attribute enables converting to/from this type in wpf and other designing environments
 [TypeConverter(typeof(PersianDateConverter))]

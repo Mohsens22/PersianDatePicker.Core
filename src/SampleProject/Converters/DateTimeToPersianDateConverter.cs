@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Data;
-using Mohsen;
 
-namespace SampleProject;
+namespace Mohsen.PersianDateControls.SampleProject;
 
 [ValueConversion(typeof(DateTime), typeof(PersianDate))]
 public class DateTimeToPersianDateConverter : IValueConverter

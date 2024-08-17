@@ -6,13 +6,13 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PersianDateControls\PersianDateControls.csproj" />
-  </ItemGroup>
-
   <Target Name="WorkaroundNetStandard" AfterTargets="ResolvePackageAssets">
     <ItemGroup>
       <TransitiveFrameworkReference Remove="NETStandard.Library" />
     </ItemGroup>
   </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PersianDateControls\Mohsen.PersianDateControls.csproj" />
+  </ItemGroup>
 </Project>

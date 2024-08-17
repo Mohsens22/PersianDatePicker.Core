@@ -26,11 +26,11 @@ public partial class PersianCalendar : UserControl
     /// Gets or sets the date that is being displayed in the calendar.
     /// </summary>
     [System.ComponentModel.Category("Calendar")]
-    public Mohsen.PersianDate DisplayDate
+    public PersianDate DisplayDate
     {
         get
         {
-            return (Mohsen.PersianDate)this.GetValue(DisplayDateProperty);
+            return (PersianDate)this.GetValue(DisplayDateProperty);
         }
         set
         {
@@ -51,9 +51,9 @@ public partial class PersianCalendar : UserControl
     /// the minimum date that is displayed, and can be selected
     /// </summary>
     [System.ComponentModel.Category("Calendar")]
-    public Mohsen.PersianDate DisplayDateStart
+    public PersianDate DisplayDateStart
     {
-        get { return (Mohsen.PersianDate)GetValue(DisplayDateStartProperty); }
+        get { return (PersianDate)GetValue(DisplayDateStartProperty); }
         set { SetValue(DisplayDateStartProperty, value); }
     }
     public static readonly DependencyProperty DisplayDateStartProperty;
@@ -63,17 +63,17 @@ public partial class PersianCalendar : UserControl
     /// the minimum date that is displayed, and can be selected
     /// </summary>
     [System.ComponentModel.Category("Calendar")]
-    public Mohsen.PersianDate DisplayDateEnd
+    public PersianDate DisplayDateEnd
     {
-        get { return (Mohsen.PersianDate)GetValue(DisplayDateEndProperty); }
+        get { return (PersianDate)GetValue(DisplayDateEndProperty); }
         set { SetValue(DisplayDateEndProperty, value); }
     }
 
     public static readonly DependencyProperty DisplayDateEndProperty;
     [System.ComponentModel.Category("Calendar")]
-    public Mohsen.PersianDate SelectedDate
+    public PersianDate SelectedDate
     {
-        get { return (Mohsen.PersianDate)GetValue(SelectedDateProperty); }
+        get { return (PersianDate)GetValue(SelectedDateProperty); }
         set { SetValue(SelectedDateProperty, value); }
     }
     public static readonly DependencyProperty SelectedDateProperty;
@@ -119,14 +119,14 @@ public partial class PersianCalendar : UserControl
     static object coerceDisplayDateStart(DependencyObject d, object o)
     {
         PersianCalendar pc = d as PersianCalendar;
-        Mohsen.PersianDate value = (Mohsen.PersianDate)o;
+        PersianDate value = (PersianDate)o;
         return o;
 
     }
     static object coerceDisplayDateEnd(DependencyObject d, object o)
     {
         PersianCalendar pc = d as PersianCalendar;
-        Mohsen.PersianDate value = (Mohsen.PersianDate)o;
+        PersianDate value = (PersianDate)o;
         if (value < pc.DisplayDateStart)
         {
             return pc.DisplayDateStart;
@@ -136,7 +136,7 @@ public partial class PersianCalendar : UserControl
     static object coerceDateToBeInRange(DependencyObject d, object o)
     {
         PersianCalendar pc = d as PersianCalendar;
-        Mohsen.PersianDate value = (Mohsen.PersianDate)o;
+        PersianDate value = (PersianDate)o;
         if (value < pc.DisplayDateStart)
         {
             return pc.DisplayDateStart;
@@ -172,43 +172,43 @@ public partial class PersianCalendar : UserControl
         DisplayModeProperty =
             DependencyProperty.Register("DisplayMode", typeof(CalendarMode), typeof(PersianCalendar), displayModeMetaData);
 
-        PropertyMetadata displayDateMetaData = new PropertyMetadata(Mohsen.PersianDate.Today, modeChanged);
+        PropertyMetadata displayDateMetaData = new PropertyMetadata(PersianDate.Today, modeChanged);
         displayDateMetaData.CoerceValueCallback = coerceDateToBeInRange;
         DisplayDateProperty =
-            DependencyProperty.Register("DisplayDate", typeof(Mohsen.PersianDate), typeof(PersianCalendar), displayDateMetaData);
+            DependencyProperty.Register("DisplayDate", typeof(PersianDate), typeof(PersianCalendar), displayDateMetaData);
 
 
-        PropertyMetadata selectedDateMetaData = new PropertyMetadata(Mohsen.PersianDate.Today,
+        PropertyMetadata selectedDateMetaData = new PropertyMetadata(PersianDate.Today,
         (DependencyObject d, DependencyPropertyChangedEventArgs e) =>
         {
             PersianCalendar pc = d as PersianCalendar;
-            pc.selectedDateCheck((Mohsen.PersianDate)e.OldValue);
+            pc.selectedDateCheck((PersianDate)e.OldValue);
             pc.RaiseEvent(new RoutedEventArgs(SelectedDateChangedEvent, pc));
         }
         );
         selectedDateMetaData.CoerceValueCallback = coerceDateToBeInRange;
         SelectedDateProperty =
-            DependencyProperty.Register("SelectedDate", typeof(Mohsen.PersianDate), typeof(PersianCalendar), selectedDateMetaData);
+            DependencyProperty.Register("SelectedDate", typeof(PersianDate), typeof(PersianCalendar), selectedDateMetaData);
 
         PropertyMetadata displayDateStartMetaData = new PropertyMetadata
         {
-            DefaultValue = new Mohsen.PersianDate(),
+            DefaultValue = new PersianDate(),
             CoerceValueCallback = new CoerceValueCallback(coerceDisplayDateStart),
             PropertyChangedCallback = new PropertyChangedCallback(DisplayDateStartChanged),
         };
 
         DisplayDateStartProperty =
-            DependencyProperty.Register("DisplayDateStart", typeof(Mohsen.PersianDate), typeof(PersianCalendar), displayDateStartMetaData);
+            DependencyProperty.Register("DisplayDateStart", typeof(PersianDate), typeof(PersianCalendar), displayDateStartMetaData);
 
         PropertyMetadata displayDateEndMetaData = new PropertyMetadata
         {
-            DefaultValue = new Mohsen.PersianDate(10000, 1, 1),
+            DefaultValue = new PersianDate(10000, 1, 1),
             CoerceValueCallback = new CoerceValueCallback(coerceDisplayDateEnd),
             PropertyChangedCallback = new PropertyChangedCallback(DisplayDateEndChanged),
         };
 
         DisplayDateEndProperty =
-            DependencyProperty.Register("DisplayDateEnd", typeof(Mohsen.PersianDate), typeof(PersianCalendar), displayDateEndMetaData);
+            DependencyProperty.Register("DisplayDateEnd", typeof(PersianDate), typeof(PersianCalendar), displayDateEndMetaData);
 
 
         PropertyMetadata todayBackgroundMetaData = new PropertyMetadata(Brushes.AliceBlue,
@@ -281,11 +281,11 @@ public partial class PersianCalendar : UserControl
     void monthModeButton_Click(object sender, RoutedEventArgs e)
     {
         Button button = (Button)sender;
-        var buttonDate = (Mohsen.PersianDate)button.Tag;
+        var buttonDate = (PersianDate)button.Tag;
         var displayDate = this.DisplayDate;
 
         if (displayDate.Year != buttonDate.Year || displayDate.Month != buttonDate.Month)
-            this.SetCurrentValue(DisplayDateProperty, new Mohsen.PersianDate(buttonDate.Year, buttonDate.Month, 1));
+            this.SetCurrentValue(DisplayDateProperty, new PersianDate(buttonDate.Year, buttonDate.Month, 1));
         this.SelectedDate = buttonDate;
     }
 
@@ -314,7 +314,7 @@ public partial class PersianCalendar : UserControl
     {
         Button button = (Button)sender;
         int month = (int)button.Tag;
-        this.SetCurrentValue(DisplayDateProperty, new Mohsen.PersianDate(this.DisplayDate.Year, month, 1));
+        this.SetCurrentValue(DisplayDateProperty, new PersianDate(this.DisplayDate.Year, month, 1));
         this.DisplayMode = CalendarMode.Month;
     }
 
@@ -341,11 +341,11 @@ public partial class PersianCalendar : UserControl
     void decadeModeButton_Click(object sender, RoutedEventArgs e)
     {
         Button button = (Button)sender;
-        this.SetCurrentValue(DisplayDateProperty, new Mohsen.PersianDate((int)button.Tag, 1, 1));
+        this.SetCurrentValue(DisplayDateProperty, new PersianDate((int)button.Tag, 1, 1));
         this.DisplayMode = CalendarMode.Year;
     }
 
-    private void selectedDateCheck(Mohsen.PersianDate? oldValue)
+    private void selectedDateCheck(PersianDate? oldValue)
     {
         int r, c;
         monthModeDateToRowColumn(this.SelectedDate, out r, out c);
@@ -362,8 +362,8 @@ public partial class PersianCalendar : UserControl
         Brush bg = Brushes.Transparent;
         if (button.Tag != null)
         {
-            var bdate = (Mohsen.PersianDate)button.Tag;
-            if (bdate == Mohsen.PersianDate.Today)
+            var bdate = (PersianDate)button.Tag;
+            if (bdate == PersianDate.Today)
             {
                 bg = this.TodayBackground;
             }
@@ -379,17 +379,17 @@ public partial class PersianCalendar : UserControl
         if (this.DisplayMode == CalendarMode.Month)
         {
             int r, c;
-            monthModeDateToRowColumn(Mohsen.PersianDate.Today, out r, out c);
+            monthModeDateToRowColumn(PersianDate.Today, out r, out c);
             setMonthModeButtonAppearance(this.monthModeButtons[r, c]);
         }
     }
     /// <param name="row">zero-based row number</param>
     /// <param name="column">zero-based column number</param>
-    private static void monthModeDateToRowColumn(Mohsen.PersianDate date, out int row, out int column)
+    private static void monthModeDateToRowColumn(PersianDate date, out int row, out int column)
     {
         int year = date.Year;
         int month = date.Month;
-        Mohsen.PersianDate firstDay = new Mohsen.PersianDate(year, month, 1);
+        PersianDate firstDay = new PersianDate(year, month, 1);
         int fstCol = 2 + (int)firstDay.PersianDayOfWeek;
         int fstRow = fstCol == 1 ? 2 : 1;
         row = (date.Day + fstCol - 2) / 7 + fstRow;
@@ -399,11 +399,11 @@ public partial class PersianCalendar : UserControl
     }
     /// <param name="row">zero-based row number</param>
     /// <param name="column">zero-based column number</param>
-    private static Mohsen.PersianDate monthModeRowColumnToDate(int row, int column, Mohsen.PersianDate displayDate)
+    private static PersianDate monthModeRowColumnToDate(int row, int column, PersianDate displayDate)
     {
         int year = displayDate.Year;
         int month = displayDate.Month;
-        Mohsen.PersianDate firstDay = new Mohsen.PersianDate(year, month, 1);
+        PersianDate firstDay = new PersianDate(year, month, 1);
         int fstCol = 2 + (int)firstDay.PersianDayOfWeek;
         int fstRow = fstCol == 1 ? 2 : 1;
         int dayDifference = (row) * 7 + column + 1 - ((fstRow - 1) * 7 + fstCol);
@@ -459,13 +459,13 @@ public partial class PersianCalendar : UserControl
 
         int year = DisplayDate.Year;
         int month = DisplayDate.Month;
-        Mohsen.PersianDate firstDayInMonth = new Mohsen.PersianDate(year, month, 1);
+        PersianDate firstDayInMonth = new PersianDate(year, month, 1);
         for (int i = 1; i <= 6; i++)
         {
             for (int j = 1; j <= 7; j++)
             {
                 var button = monthModeButtons[i - 1, j - 1];
-                Mohsen.PersianDate date = new Mohsen.PersianDate();
+                PersianDate date = new PersianDate();
                 bool dateInRange;
                 try
                 {
@@ -520,8 +520,8 @@ public partial class PersianCalendar : UserControl
             for (int j = 0; j < 3; j++)
             {
                 int month = j + i * 3 + 1;
-                if (new Mohsen.PersianDate(DisplayDate.Year, month, Mohsen.PersianDate.DaysInMonth(DisplayDate.Year, month)) >= DisplayDateStart &&
-                    new Mohsen.PersianDate(DisplayDate.Year, month, 1) <= DisplayDateEnd)
+                if (new PersianDate(DisplayDate.Year, month, PersianDate.DaysInMonth(DisplayDate.Year, month)) >= DisplayDateStart &&
+                    new PersianDate(DisplayDate.Year, month, 1) <= DisplayDateEnd)
                 {
                     yearModeButtons[i, j].Content = ((PersianMonth)month).ToString();
                     yearModeButtons[i, j].IsEnabled = true;
@@ -541,21 +541,21 @@ public partial class PersianCalendar : UserControl
         int y = this.DisplayDate.Year;
         try
         {
-            Mohsen.PersianDate newDisplayDate = DisplayDate;
+            PersianDate newDisplayDate = DisplayDate;
             if (this.DisplayMode == CalendarMode.Month)
             {
                 if (m == 12)
-                    newDisplayDate = new Mohsen.PersianDate(y + 1, 1, 1);
+                    newDisplayDate = new PersianDate(y + 1, 1, 1);
                 else
-                    newDisplayDate = new Mohsen.PersianDate(y, m + 1, 1);
+                    newDisplayDate = new PersianDate(y, m + 1, 1);
             }
             else if (this.DisplayMode == CalendarMode.Year)
             {
-                newDisplayDate = new Mohsen.PersianDate(DisplayDate.Year + 1, 1, 1);
+                newDisplayDate = new PersianDate(DisplayDate.Year + 1, 1, 1);
             }
             else if (this.DisplayMode == CalendarMode.Decade)
             {
-                newDisplayDate = new Mohsen.PersianDate(y - y % 10 + 10, 1, 1);
+                newDisplayDate = new PersianDate(y - y % 10 + 10, 1, 1);
             }
 
             if (newDisplayDate >= DisplayDateStart && newDisplayDate <= DisplayDateEnd)
@@ -573,22 +573,22 @@ public partial class PersianCalendar : UserControl
         int y = this.DisplayDate.Year;
         try
         {
-            Mohsen.PersianDate newDisplayDate = DisplayDate;
+            PersianDate newDisplayDate = DisplayDate;
 
             if (this.DisplayMode == CalendarMode.Month)
             {
                 if (m == 1)
-                    newDisplayDate = new Mohsen.PersianDate(y - 1, 12, Mohsen.PersianDate.DaysInMonth(y - 1, 12));
+                    newDisplayDate = new PersianDate(y - 1, 12, PersianDate.DaysInMonth(y - 1, 12));
                 else
-                    newDisplayDate = new Mohsen.PersianDate(y, m - 1, Mohsen.PersianDate.DaysInMonth(y, m - 1));
+                    newDisplayDate = new PersianDate(y, m - 1, PersianDate.DaysInMonth(y, m - 1));
             }
             else if (this.DisplayMode == CalendarMode.Year)
             {
-                newDisplayDate = new Mohsen.PersianDate(y - 1, 12, Mohsen.PersianDate.DaysInMonth(y - 1, 12));
+                newDisplayDate = new PersianDate(y - 1, 12, PersianDate.DaysInMonth(y - 1, 12));
             }
             else if (this.DisplayMode == CalendarMode.Decade)
             {
-                newDisplayDate = new Mohsen.PersianDate(y - y % 10 - 1, 12, Mohsen.PersianDate.DaysInMonth(y - y % 10 - 1, 12));
+                newDisplayDate = new PersianDate(y - y % 10 - 1, 12, PersianDate.DaysInMonth(y - y % 10 - 1, 12));
             }
 
             if (newDisplayDate >= DisplayDateStart && newDisplayDate <= DisplayDateEnd)
