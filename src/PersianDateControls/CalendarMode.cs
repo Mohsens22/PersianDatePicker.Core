@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace Mohsen.PersianDateControls;
 
-namespace Mohsen.PersianDateControls
+public enum CalendarMode
 {
-    public enum CalendarMode
-    {
-        Month,
-        Year,
-        Decade,
-    }
+    Month,
+    Year,
+    Decade,
 }
