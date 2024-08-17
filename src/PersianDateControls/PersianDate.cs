@@ -433,7 +433,7 @@ public struct PersianDate : IComparable<PersianDate>
     /// <returns></returns>
     public override string ToString()
     {
-        return string.Format("{0}/{1}/{2}", Year, Month, Day);
+        return string.Format("{0}/{1}/{2}", Year.ToString().PadLeft(4, '0'), Month.ToString().PadLeft(2, '0'), Day.ToString().PadLeft(2, '0'));
     }
     /// <summary>
     /// Returns the long date String representation of the PersianDate Value.
@@ -441,7 +441,7 @@ public struct PersianDate : IComparable<PersianDate>
     /// <returns></returns>
     public string ToLongDateString()
     {
-        return string.Format("‏" + "{3}، {2} {1} {0}", Year, MonthAsPersianMonth, Day, PersianDayOfWeek);
+        return string.Format("‏" + "{3}، {2} {1} {0}", Year.ToString().PadLeft(4, '0'), MonthAsPersianMonth.ToString().PadLeft(2, '0'), Day, PersianDayOfWeek.ToString().PadLeft(2, '0'));
     }
 
     #region IComparable<PersianDate> Members
